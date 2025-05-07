@@ -3,8 +3,9 @@ FROM mysterysd/wzmlx:heroku
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
 
+# Update and install dependencies including ffmpeg
 RUN apt -qq update && \
-    apt-get install fontconfig -y -f
+    apt -qq install -y fontconfig ffmpeg
 
 COPY . .
 
