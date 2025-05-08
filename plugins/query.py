@@ -119,7 +119,7 @@ async def Cb_Handle(bot: Client, query: CallbackQuery):
           #  ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 13 -tune film -vf "fspp=strength=7,unsharp=7:7:1.3,lut3d=\'BT709.cube\'" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'        
            # ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 13 -tune film -vf "fspp=strength=7,unsharp=7:7:1.3,normalize=strength=0.5,aa=0.5" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
 
-            ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset veryslow -crf 14 -tune film -vf "nlmeans=7:7:15:3,unsharp=7:7:1.5,eq=contrast=1.05:brightness=0.01:saturation=1.1" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
+            ffmpeg = '-map 0 -c:v libx264 -profile:v high -level 4.1 -preset veryslow -crf 13 -tune film -vf "nlmeans=7:7:15:3,unsharp=7:7:2.0,eq=contrast=1.05:brightness=0.01:saturation=1.1" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
             
             await CompressVideo(bot=bot, query=query, ffmpegcode=ffmpeg, c_thumb=c_thumb)
 
