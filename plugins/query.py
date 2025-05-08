@@ -116,8 +116,8 @@ async def Cb_Handle(bot: Client, query: CallbackQuery):
             # ffmpeg = "-preset veryfast -c:v libx264 -s 1280x720 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 5"
            # ffmpeg = "-map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 18 -x264-params bluray-compat=1 -c:a eac3 -b:a 640k -c:s copy -metadata title='SharkToonsIndia' -metadata:s:v title='SharkToonsIndia' -metadata:s:a title='SharkToonsIndia' -metadata:s:s title='SharkToonsIndia'"
           #  ffmpeg = "-map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 18 -x264-params bluray-compat=1 -c:a eac3 -b:a 448k -ar 48000 -af 'aresample=async=1:min_hard_comp=0.100:first_pts=0,volume=1.5' -c:s copy -metadata title='SharkToonsIndia' -metadata:s:v title='SharkToonsIndia' -metadata:s:a title='SharkToonsIndia' -metadata:s:s title='SharkToonsIndia'"
-            ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 13 -tune film -vf "fspp=strength=7,unsharp=7:7:1.3,lut3d=\'BT709.cube\'" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
-            
+          #  ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 13 -tune film -vf "fspp=strength=7,unsharp=7:7:1.3,lut3d=\'BT709.cube\'" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'        
+            ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 13 -tune film -vf "fspp=strength=7,unsharp=7:7:1.3,normalize=strength=0.5,aa=0.5" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
             
             await CompressVideo(bot=bot, query=query, ffmpegcode=ffmpeg, c_thumb=c_thumb)
 
